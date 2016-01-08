@@ -15,6 +15,8 @@
 		CF6179531C37022F00985CE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF6179511C37022F00985CE4 /* LaunchScreen.storyboard */; };
 		CF61795E1C37022F00985CE4 /* re_veillerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF61795D1C37022F00985CE4 /* re_veillerTests.swift */; };
 		CF6179691C37022F00985CE4 /* re_veillerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6179681C37022F00985CE4 /* re_veillerUITests.swift */; };
+		CFF57AC71C4021CC00F70357 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF57AC61C4021CC00F70357 /* Alarm.swift */; };
+		CFF57AC91C402E5B00F70357 /* ElasticDateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF57AC81C402E5B00F70357 /* ElasticDateTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		CF6179641C37022F00985CE4 /* réveillerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "réveillerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6179681C37022F00985CE4 /* re_veillerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = re_veillerUITests.swift; sourceTree = "<group>"; };
 		CF61796A1C37022F00985CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFF57AC61C4021CC00F70357 /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		CFF57AC81C402E5B00F70357 /* ElasticDateTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticDateTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				CF61794F1C37022F00985CE4 /* Assets.xcassets */,
 				CF6179511C37022F00985CE4 /* LaunchScreen.storyboard */,
 				CF6179541C37022F00985CE4 /* Info.plist */,
+				CFF57AC61C4021CC00F70357 /* Alarm.swift */,
+				CFF57AC81C402E5B00F70357 /* ElasticDateTime.swift */,
 			);
 			path = "réveiller";
 			sourceTree = "<group>";
@@ -265,8 +271,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF61794B1C37022F00985CE4 /* SecondViewController.swift in Sources */,
+				CFF57AC91C402E5B00F70357 /* ElasticDateTime.swift in Sources */,
 				CF6179471C37022F00985CE4 /* AppDelegate.swift in Sources */,
 				CF6179491C37022F00985CE4 /* FirstViewController.swift in Sources */,
+				CFF57AC71C4021CC00F70357 /* Alarm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +501,7 @@
 				CF61796F1C37022F00985CE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF6179701C37022F00985CE4 /* Build configuration list for PBXNativeTarget "réveillerTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +510,7 @@
 				CF6179721C37022F00985CE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF6179731C37022F00985CE4 /* Build configuration list for PBXNativeTarget "réveillerUITests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +519,7 @@
 				CF6179751C37022F00985CE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
