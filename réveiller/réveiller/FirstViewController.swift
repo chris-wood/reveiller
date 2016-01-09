@@ -67,19 +67,11 @@ class FirstViewController: UIViewController {
         }
         
         print(targetDateString)
-
-//        let dateFormatter = NSDateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-//        targetDate = dateFormatter.dateFromString(targetDateString)!
         
         alarm.setSnoozeTime(20)
         alarm.setSnoozeDecay(2) // half every time
         alarm.setAlarmDate(targetDateString)
         alarm.activateAlarm(self, theSelector: Selector("timerExpired"));
-        
-        
-//        let timer = NSTimer(fireDate: targetDate, interval: 0, target: self, selector: "timerExpired", userInfo: nil, repeats: false)
-//        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
     }
     
     override func viewDidLoad() {
