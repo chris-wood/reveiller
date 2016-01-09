@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CFAFB25C1C4190F400CF6BA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFB25B1C4190F400CF6BA3 /* AppDelegate.swift */; };
+		CFAFB25E1C4190F400CF6BA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFB25D1C4190F400CF6BA3 /* ViewController.swift */; };
+		CFAFB2641C4190F400CF6BA3 /* reveiller.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CFAFB2621C4190F400CF6BA3 /* reveiller.xcdatamodeld */; };
+		CFAFB2661C4190F400CF6BA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFAFB2651C4190F400CF6BA3 /* Assets.xcassets */; };
+		CFAFB2691C4190F400CF6BA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAFB2671C4190F400CF6BA3 /* LaunchScreen.storyboard */; };
+		CFAFB2741C4190F500CF6BA3 /* reveillerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFB2731C4190F500CF6BA3 /* reveillerTests.swift */; };
+		CFAFB27F1C4190F500CF6BA3 /* reveillerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFB27E1C4190F500CF6BA3 /* reveillerUITests.swift */; };
+		CFAFB28F1C41914100CF6BA3 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFB28C1C41914100CF6BA3 /* Alarm.swift */; };
+		CFAFB2901C41914100CF6BA3 /* ElasticDateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFB28D1C41914100CF6BA3 /* ElasticDateTime.swift */; };
+		CFAFB2961C41929800CF6BA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAFB2941C41929800CF6BA3 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CFAFB2701C4190F500CF6BA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFAFB2501C4190F400CF6BA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFAFB2571C4190F400CF6BA3;
+			remoteInfo = reveiller;
+		};
+		CFAFB27B1C4190F500CF6BA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFAFB2501C4190F400CF6BA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFAFB2571C4190F400CF6BA3;
+			remoteInfo = reveiller;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CFAFB2581C4190F400CF6BA3 /* reveiller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reveiller.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFAFB25B1C4190F400CF6BA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CFAFB25D1C4190F400CF6BA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CFAFB2631C4190F400CF6BA3 /* reveiller.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = reveiller.xcdatamodel; sourceTree = "<group>"; };
+		CFAFB2651C4190F400CF6BA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CFAFB2681C4190F400CF6BA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CFAFB26A1C4190F500CF6BA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFAFB26F1C4190F500CF6BA3 /* reveillerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reveillerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFAFB2731C4190F500CF6BA3 /* reveillerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reveillerTests.swift; sourceTree = "<group>"; };
+		CFAFB2751C4190F500CF6BA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFAFB27A1C4190F500CF6BA3 /* reveillerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reveillerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFAFB27E1C4190F500CF6BA3 /* reveillerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reveillerUITests.swift; sourceTree = "<group>"; };
+		CFAFB2801C4190F500CF6BA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFAFB28C1C41914100CF6BA3 /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		CFAFB28D1C41914100CF6BA3 /* ElasticDateTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticDateTime.swift; sourceTree = "<group>"; };
+		CFAFB2951C41929800CF6BA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CFAFB2551C4190F400CF6BA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFAFB26C1C4190F500CF6BA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFAFB2771C4190F500CF6BA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CFAFB24F1C4190F400CF6BA3 = {
+			isa = PBXGroup;
+			children = (
+				CFAFB25A1C4190F400CF6BA3 /* reveiller */,
+				CFAFB2721C4190F500CF6BA3 /* reveillerTests */,
+				CFAFB27D1C4190F500CF6BA3 /* reveillerUITests */,
+				CFAFB2591C4190F400CF6BA3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CFAFB2591C4190F400CF6BA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFAFB2581C4190F400CF6BA3 /* reveiller.app */,
+				CFAFB26F1C4190F500CF6BA3 /* reveillerTests.xctest */,
+				CFAFB27A1C4190F500CF6BA3 /* reveillerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CFAFB25A1C4190F400CF6BA3 /* reveiller */ = {
+			isa = PBXGroup;
+			children = (
+				CFAFB25B1C4190F400CF6BA3 /* AppDelegate.swift */,
+				CFAFB25D1C4190F400CF6BA3 /* ViewController.swift */,
+				CFAFB28C1C41914100CF6BA3 /* Alarm.swift */,
+				CFAFB28D1C41914100CF6BA3 /* ElasticDateTime.swift */,
+				CFAFB2651C4190F400CF6BA3 /* Assets.xcassets */,
+				CFAFB2671C4190F400CF6BA3 /* LaunchScreen.storyboard */,
+				CFAFB2941C41929800CF6BA3 /* Main.storyboard */,
+				CFAFB26A1C4190F500CF6BA3 /* Info.plist */,
+				CFAFB2621C4190F400CF6BA3 /* reveiller.xcdatamodeld */,
+			);
+			path = reveiller;
+			sourceTree = "<group>";
+		};
+		CFAFB2721C4190F500CF6BA3 /* reveillerTests */ = {
+			isa = PBXGroup;
+			children = (
+				CFAFB2731C4190F500CF6BA3 /* reveillerTests.swift */,
+				CFAFB2751C4190F500CF6BA3 /* Info.plist */,
+			);
+			path = reveillerTests;
+			sourceTree = "<group>";
+		};
+		CFAFB27D1C4190F500CF6BA3 /* reveillerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CFAFB27E1C4190F500CF6BA3 /* reveillerUITests.swift */,
+				CFAFB2801C4190F500CF6BA3 /* Info.plist */,
+			);
+			path = reveillerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CFAFB2571C4190F400CF6BA3 /* reveiller */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFAFB2831C4190F500CF6BA3 /* Build configuration list for PBXNativeTarget "reveiller" */;
+			buildPhases = (
+				CFAFB2541C4190F400CF6BA3 /* Sources */,
+				CFAFB2551C4190F400CF6BA3 /* Frameworks */,
+				CFAFB2561C4190F400CF6BA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = reveiller;
+			productName = reveiller;
+			productReference = CFAFB2581C4190F400CF6BA3 /* reveiller.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CFAFB26E1C4190F500CF6BA3 /* reveillerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFAFB2861C4190F500CF6BA3 /* Build configuration list for PBXNativeTarget "reveillerTests" */;
+			buildPhases = (
+				CFAFB26B1C4190F500CF6BA3 /* Sources */,
+				CFAFB26C1C4190F500CF6BA3 /* Frameworks */,
+				CFAFB26D1C4190F500CF6BA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFAFB2711C4190F500CF6BA3 /* PBXTargetDependency */,
+			);
+			name = reveillerTests;
+			productName = reveillerTests;
+			productReference = CFAFB26F1C4190F500CF6BA3 /* reveillerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CFAFB2791C4190F500CF6BA3 /* reveillerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFAFB2891C4190F500CF6BA3 /* Build configuration list for PBXNativeTarget "reveillerUITests" */;
+			buildPhases = (
+				CFAFB2761C4190F500CF6BA3 /* Sources */,
+				CFAFB2771C4190F500CF6BA3 /* Frameworks */,
+				CFAFB2781C4190F500CF6BA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFAFB27C1C4190F500CF6BA3 /* PBXTargetDependency */,
+			);
+			name = reveillerUITests;
+			productName = reveillerUITests;
+			productReference = CFAFB27A1C4190F500CF6BA3 /* reveillerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CFAFB2501C4190F400CF6BA3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = caw;
+				TargetAttributes = {
+					CFAFB2571C4190F400CF6BA3 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					CFAFB26E1C4190F500CF6BA3 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = CFAFB2571C4190F400CF6BA3;
+					};
+					CFAFB2791C4190F500CF6BA3 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = CFAFB2571C4190F400CF6BA3;
+					};
+				};
+			};
+			buildConfigurationList = CFAFB2531C4190F400CF6BA3 /* Build configuration list for PBXProject "reveiller" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CFAFB24F1C4190F400CF6BA3;
+			productRefGroup = CFAFB2591C4190F400CF6BA3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CFAFB2571C4190F400CF6BA3 /* reveiller */,
+				CFAFB26E1C4190F500CF6BA3 /* reveillerTests */,
+				CFAFB2791C4190F500CF6BA3 /* reveillerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CFAFB2561C4190F400CF6BA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFAFB2961C41929800CF6BA3 /* Main.storyboard in Resources */,
+				CFAFB2691C4190F400CF6BA3 /* LaunchScreen.storyboard in Resources */,
+				CFAFB2661C4190F400CF6BA3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFAFB26D1C4190F500CF6BA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFAFB2781C4190F500CF6BA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CFAFB2541C4190F400CF6BA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFAFB25E1C4190F400CF6BA3 /* ViewController.swift in Sources */,
+				CFAFB2901C41914100CF6BA3 /* ElasticDateTime.swift in Sources */,
+				CFAFB25C1C4190F400CF6BA3 /* AppDelegate.swift in Sources */,
+				CFAFB2641C4190F400CF6BA3 /* reveiller.xcdatamodeld in Sources */,
+				CFAFB28F1C41914100CF6BA3 /* Alarm.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFAFB26B1C4190F500CF6BA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFAFB2741C4190F500CF6BA3 /* reveillerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFAFB2761C4190F500CF6BA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFAFB27F1C4190F500CF6BA3 /* reveillerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CFAFB2711C4190F500CF6BA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFAFB2571C4190F400CF6BA3 /* reveiller */;
+			targetProxy = CFAFB2701C4190F500CF6BA3 /* PBXContainerItemProxy */;
+		};
+		CFAFB27C1C4190F500CF6BA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFAFB2571C4190F400CF6BA3 /* reveiller */;
+			targetProxy = CFAFB27B1C4190F500CF6BA3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CFAFB2671C4190F400CF6BA3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFAFB2681C4190F400CF6BA3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CFAFB2941C41929800CF6BA3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFAFB2951C41929800CF6BA3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CFAFB2811C4190F500CF6BA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CFAFB2821C4190F500CF6BA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CFAFB2841C4190F500CF6BA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = reveiller/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = caw.reveiller;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CFAFB2851C4190F500CF6BA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = reveiller/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = caw.reveiller;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CFAFB2871C4190F500CF6BA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = reveillerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = caw.reveillerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/reveiller.app/reveiller";
+			};
+			name = Debug;
+		};
+		CFAFB2881C4190F500CF6BA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = reveillerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = caw.reveillerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/reveiller.app/reveiller";
+			};
+			name = Release;
+		};
+		CFAFB28A1C4190F500CF6BA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = reveillerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = caw.reveillerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = reveiller;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		CFAFB28B1C4190F500CF6BA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = reveillerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = caw.reveillerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = reveiller;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFAFB2531C4190F400CF6BA3 /* Build configuration list for PBXProject "reveiller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFAFB2811C4190F500CF6BA3 /* Debug */,
+				CFAFB2821C4190F500CF6BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFAFB2831C4190F500CF6BA3 /* Build configuration list for PBXNativeTarget "reveiller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFAFB2841C4190F500CF6BA3 /* Debug */,
+				CFAFB2851C4190F500CF6BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFAFB2861C4190F500CF6BA3 /* Build configuration list for PBXNativeTarget "reveillerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFAFB2871C4190F500CF6BA3 /* Debug */,
+				CFAFB2881C4190F500CF6BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFAFB2891C4190F500CF6BA3 /* Build configuration list for PBXNativeTarget "reveillerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFAFB28A1C4190F500CF6BA3 /* Debug */,
+				CFAFB28B1C4190F500CF6BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CFAFB2621C4190F400CF6BA3 /* reveiller.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CFAFB2631C4190F400CF6BA3 /* reveiller.xcdatamodel */,
+			);
+			currentVersion = CFAFB2631C4190F400CF6BA3 /* reveiller.xcdatamodel */;
+			path = reveiller.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CFAFB2501C4190F400CF6BA3 /* Project object */;
+}
