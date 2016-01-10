@@ -16,10 +16,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var targetTimeLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var decayTimeLabel: UILabel!
+    @IBOutlet weak var editButton: UIButton!
     
     var alarm: Alarm = Alarm()
     var time: ElasticDateTime?
-    
     var targetDate: NSDate = NSDate();
     
     func timerExpired() {
