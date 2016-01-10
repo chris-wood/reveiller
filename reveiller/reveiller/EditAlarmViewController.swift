@@ -10,6 +10,16 @@ import UIKit
 
 class EditAlarmViewController : UIViewController {
     
+    @IBOutlet weak var cancelButton: UIButton!
+    
+    @IBAction func onCancelButton(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: {
+            let appDelegate : AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.setAlarm(nil)
+//            appDelegate.addAlarm(alarm)
+        });
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

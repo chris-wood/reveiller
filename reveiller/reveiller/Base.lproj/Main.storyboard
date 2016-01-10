@@ -127,17 +127,20 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KjU-Ju-i22">
                                 <rect key="frame" x="30" y="30" width="540" height="370"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="400" translatesAutoresizingMaskIntoConstraints="NO" id="v5L-sA-9nn">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="v5L-sA-9nn">
                                         <rect key="frame" x="0.0" y="0.0" width="540" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDp-YY-tgn">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDp-YY-tgn">
+                                                <rect key="frame" x="0.0" y="0.0" width="265" height="30"/>
                                                 <state key="normal" title="Cancel">
                                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onCancelButton:" destination="UP4-WX-fjs" eventType="touchUpInside" id="Sdx-RJ-YFc"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdX-es-4fI">
-                                                <rect key="frame" x="470" y="0.0" width="70" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdX-es-4fI">
+                                                <rect key="frame" x="275" y="0.0" width="265" height="30"/>
                                                 <state key="normal" title="Save">
                                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -207,15 +210,13 @@
                             <constraint firstItem="S2V-fg-cKe" firstAttribute="top" secondItem="KjU-Ju-i22" secondAttribute="bottom" constant="200" id="0O7-3N-eaK"/>
                             <constraint firstItem="KjU-Ju-i22" firstAttribute="leading" secondItem="9O9-0a-KDf" secondAttribute="leadingMargin" constant="10" id="14Y-mJ-Uo7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KjU-Ju-i22" secondAttribute="trailing" constant="10" id="22Q-Yk-nOx"/>
-                            <constraint firstItem="S2V-fg-cKe" firstAttribute="top" secondItem="KjU-Ju-i22" secondAttribute="bottom" constant="10" id="SxS-77-qgH"/>
+                            <constraint firstItem="v5L-sA-9nn" firstAttribute="top" secondItem="4OJ-9L-31i" secondAttribute="bottom" constant="10" id="XM8-eo-ZQy"/>
                             <constraint firstItem="KjU-Ju-i22" firstAttribute="top" secondItem="4OJ-9L-31i" secondAttribute="bottom" constant="10" id="cVM-gf-SdP"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="SxS-77-qgH"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="fDp-YY-tgn" id="pYh-Lj-I0Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NNk-M8-FSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

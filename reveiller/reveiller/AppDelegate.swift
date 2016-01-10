@@ -14,9 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var alarms: [Alarm] = []
+    var viewController : ViewController!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        viewController = application.windows[0].rootViewController as! ViewController
+        
         return true
     }
 
@@ -90,6 +95,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
     }()
+    
+    func setAlarm(alarm: Alarm!) {
+        print("Setting an alarm")
+//        alarms.updateValue(alarm, forKey: alarm.region.identifier)
+//        locationManager.startMonitoringForRegion(alarm.region)
+//        
+//        
+//        masterViewController.objects.append(alarm)
+//        masterViewController.tableView.reloadData()
+    }
 
     // MARK: - Core Data Saving support
 
