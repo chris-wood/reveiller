@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="ViewController" customModule="reveiller" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="MainViewController" customModule="reveiller" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -67,6 +67,7 @@
                                                 <state key="normal" title="Activate"/>
                                                 <connections>
                                                     <action selector="onActivatePress:" destination="9pv-A4-QxB" eventType="touchUpInside" id="QNX-nZ-sz4"/>
+                                                    <segue destination="D1z-p4-yhw" kind="show" id="h8W-EB-EQw"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fra-OR-Qi9">
@@ -222,10 +223,10 @@
             </objects>
             <point key="canvasLocation" x="1464" y="-542"/>
         </scene>
-        <!--View Controller-->
+        <!--Active Alarm View Controller-->
         <scene sceneID="pCd-S1-Rcy">
             <objects>
-                <viewController id="D1z-p4-yhw" sceneMemberID="viewController">
+                <viewController id="D1z-p4-yhw" customClass="ActiveAlarmViewController" customModule="reveiller" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nqQ-RG-nOq"/>
                         <viewControllerLayoutGuide type="bottom" id="hLp-lP-4gX"/>
@@ -233,8 +234,31 @@
                     <view key="view" contentMode="scaleToFill" id="r8y-Wb-mhk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PC4-0L-TeJ">
+                                <rect key="frame" x="20" y="0.0" width="560" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX:YY:ZZ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXG-cP-JpK">
+                                        <rect key="frame" x="167" y="0.0" width="227" height="600"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="53"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PC4-0L-TeJ" firstAttribute="leading" secondItem="r8y-Wb-mhk" secondAttribute="leadingMargin" id="D2N-Zy-3rm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PC4-0L-TeJ" secondAttribute="trailing" id="Dto-b9-yZq"/>
+                            <constraint firstItem="hLp-lP-4gX" firstAttribute="top" secondItem="PC4-0L-TeJ" secondAttribute="bottom" id="EAF-2G-Nwu"/>
+                            <constraint firstItem="PC4-0L-TeJ" firstAttribute="centerY" secondItem="r8y-Wb-mhk" secondAttribute="centerY" id="I1u-ra-ZJs"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="stackView" destination="PC4-0L-TeJ" id="aCV-Jr-0HL"/>
+                        <outlet property="timeLabel" destination="CXG-cP-JpK" id="9H8-ai-oEP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7aH-gp-G66" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

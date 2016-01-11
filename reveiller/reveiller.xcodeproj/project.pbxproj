@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF5E71491C44271500EDF98D /* ActiveAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E71481C44271500EDF98D /* ActiveAlarmViewController.swift */; };
 		CFAFB25C1C4190F400CF6BA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFB25B1C4190F400CF6BA3 /* AppDelegate.swift */; };
 		CFAFB25E1C4190F400CF6BA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFB25D1C4190F400CF6BA3 /* ViewController.swift */; };
 		CFAFB2641C4190F400CF6BA3 /* reveiller.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CFAFB2621C4190F400CF6BA3 /* reveiller.xcdatamodeld */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF5E71481C44271500EDF98D /* ActiveAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveAlarmViewController.swift; sourceTree = "<group>"; };
 		CFAFB2581C4190F400CF6BA3 /* reveiller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reveiller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFAFB25B1C4190F400CF6BA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFAFB25D1C4190F400CF6BA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				CFAFB25B1C4190F400CF6BA3 /* AppDelegate.swift */,
 				CFAFB25D1C4190F400CF6BA3 /* ViewController.swift */,
 				CFCFE4CF1C41C4E700572F55 /* EditAlarmViewController.swift */,
+				CF5E71481C44271500EDF98D /* ActiveAlarmViewController.swift */,
 				CFAFB28C1C41914100CF6BA3 /* Alarm.swift */,
 				CFAFB28D1C41914100CF6BA3 /* ElasticDateTime.swift */,
 				CFAFB2651C4190F400CF6BA3 /* Assets.xcassets */,
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFAFB25E1C4190F400CF6BA3 /* ViewController.swift in Sources */,
+				CF5E71491C44271500EDF98D /* ActiveAlarmViewController.swift in Sources */,
 				CFAFB2901C41914100CF6BA3 /* ElasticDateTime.swift in Sources */,
 				CFAFB25C1C4190F400CF6BA3 /* AppDelegate.swift in Sources */,
 				CFAFB2641C4190F400CF6BA3 /* reveiller.xcdatamodeld in Sources */,
