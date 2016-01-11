@@ -17,6 +17,8 @@ public class Alarm {
     var callbackSelector: Selector?
     var time: ElasticDateTime?
     
+    
+    
     public func setAlarmDate(timeString: String) {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
