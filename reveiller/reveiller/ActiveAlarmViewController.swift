@@ -14,6 +14,8 @@ class ActiveAlarmViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
     
+    var alarm: Alarm?
+    
     func setCurrentTime() {
         let currentDate = NSDate()
         let calendar = NSCalendar.currentCalendar()
@@ -28,13 +30,17 @@ class ActiveAlarmViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Make them transparent
+        self.timeLabel.alpha = 1.0
+        self.stackView.alpha = 1.0
         
         setCurrentTime();
         NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "setCurrentTime", userInfo: nil, repeats: true)
         
         UIView.transitionWithView(self.stackView, duration: 1.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
-                self.stackView.backgroundColor = UIColor.blackColor()
+                self.view.backgroundColor = UIColor.blackColor()
+                self.timeLabel.textColor = UIColor.whiteColor()
             }, completion: { finished in
                 
             }

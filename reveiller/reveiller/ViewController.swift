@@ -72,6 +72,18 @@ class MainViewController: UIViewController {
         alarm.setSnoozeDecay(2) // half every time
         alarm.setAlarmDate(targetDateString)
         alarm.activateAlarm(self, theSelector: Selector("timerExpired"));
+        
+        // TODO: fill this in
+//        performSegueWithIdentifier("ShowActiveAlarm", sender: UIColor.blueColor())
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowActiveAlarm" {
+            if let activeAlarmViewController = segue.destinationViewController as? ActiveAlarmViewController {
+                // TODO: set any properties of the destination view controller here
+//                colorViewController.color = sender as? UIColor
+            }
+        }
     }
     
     override func viewDidLoad() {
