@@ -39,4 +39,22 @@ public class ElasticDateTime {
     public func getDateTime() -> NSDate {
         return time
     }
+    
+    public func update() -> ElasticDateTime {
+        time = NSDate()
+        return self
+    }
+    
+    public func getTimeString() -> String {
+        let currentDate = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Hour, .Minute, .Second], fromDate: currentDate)
+        
+        var targetDateString = String(format: "%02d", components.hour) + ":";
+        targetDateString = targetDateString + String(format: "%02d", components.minute) + ":";
+        targetDateString = targetDateString + String(format: "%02d", components.second);
+        
+        return targetDateString
+    }
+    
 }

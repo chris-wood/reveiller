@@ -15,17 +15,33 @@ class ActiveAlarmViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     
     var alarm: Alarm?
+    var currentTime: ElasticDateTime?
+    var backgroundColor: Bool = false
     
     func setCurrentTime() {
-        let currentDate = NSDate()
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components([.Hour, .Minute, .Second], fromDate: currentDate)
-        
-        var targetDateString = String(components.hour) + ":";
-        targetDateString = targetDateString + String(components.minute) + ":";
-        targetDateString = targetDateString + String(format: "%02d", components.second);
-        
-        timeLabel.text = targetDateString;
+        let time = currentTime!.update().getTimeString()
+        print(time)
+        timeLabel.text = time
+    }
+    
+    func flashScreen() {
+        if (backgroundColor) {
+            self.view!.backgroundColor = UIColor.blackColor()
+            self.timeLabel.textColor = UIColor.whiteColor()
+        } else {
+            self.view!.backgroundColor = UIColor.whiteColor()
+            self.timeLabel.textColor = UIColor.blackColor()
+        }
+        backgroundColor = !backgroundColor
+    }
+    
+    func timerExpired() {
+        if alarm!.alarmExpired() {
+            print("Snooze!")
+        } else {
+            print("Done!")
+            NSTimer.scheduledTimerWithTimeInterval(0.25, target: self, selector: "flashScreen", userInfo: nil, repeats: true)
+        }
     }
     
     override func viewDidLoad() {
@@ -35,6 +51,8 @@ class ActiveAlarmViewController: UIViewController {
         self.timeLabel.alpha = 1.0
         self.stackView.alpha = 1.0
         
+        // Initialize and start updating the current time
+        self.currentTime = ElasticDateTime(dateTime: NSDate())
         setCurrentTime();
         NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "setCurrentTime", userInfo: nil, repeats: true)
         
@@ -45,11 +63,13 @@ class ActiveAlarmViewController: UIViewController {
                 
             }
         )
+        
+        alarm!.setSnoozeTime(5)
+        alarm!.setSnoozeDecay(2) // half every time
+        alarm!.activateAlarm(self, theSelector: Selector("timerExpired"));
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
 }
