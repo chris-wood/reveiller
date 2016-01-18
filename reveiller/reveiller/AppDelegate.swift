@@ -14,13 +14,78 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    var alarms: [Alarm] = []
     var viewController : MainViewController!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
         viewController = application.windows[0].rootViewController as! MainViewController
+        
+        // Initialize Fetch Request
+        let fetchRequest = NSFetchRequest()
+        
+        // Create Entity Description
+        let entityDescription = NSEntityDescription.entityForName("Alarm", inManagedObjectContext: self.managedObjectContext)
+        
+        // Configure Fetch Request
+        fetchRequest.entity = entityDescription
+        
+        // terminate everything to test creating an alarm scratch...
+        let secondFetchRequest = NSFetchRequest(entityName: "Alarm")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: secondFetchRequest)
+        do {
+            try persistentStoreCoordinator.executeRequest(deleteRequest, withContext: self.managedObjectContext)
+        } catch let error as NSError {
+            // TODO: handle the error appropriately...
+            print(error)
+        }
+        
+        do {
+            let result = try self.managedObjectContext.executeFetchRequest(fetchRequest)
+            print(result)
+            
+            if result.count == 0 {
+                let entity =  NSEntityDescription.entityForName("Alarm",
+                    inManagedObjectContext: managedObjectContext)!
+                
+                let thealarm = RealAlarm(entity: entity, insertIntoManagedObjectContext: managedObjectContext)
+                thealarm.setValue(10, forKey: "snoozeStart")
+                thealarm.setValue(10, forKey: "snoozeDecay")
+                thealarm.setValue("metal", forKey: "alarmName")
+                thealarm.setValue("wav", forKey: "alarmType")
+                
+                print(thealarm)
+//                print(NSStringFromClass(thealarm.dynamicType).componentsSeparatedByString(".").last!)
+//                print(NSStringFromClass(thealarm))
+
+                thealarm.initialize()
+                viewController.alarm = thealarm
+                
+                do {
+                    try thealarm.managedObjectContext?.save()
+                    print("OK, it worked.")
+                } catch {
+                    print("WTF!")
+                }
+            } else {
+                let alarm = RealAlarm()
+                let alarmData = result[-1]
+                if let snoozeStart = alarmData.valueForKey("snoozeStart"),
+                        snoozeDecay = alarmData.valueForKey("snoozeDecay"),
+                        alarmName = alarmData.valueForKey("alarmName"),
+                        alarmType = alarmData.valueForKey("alarmType") {
+                    alarm.snoozeStart = snoozeStart as! NSNumber
+                    alarm.snoozeDecay = snoozeDecay as! NSNumber
+                    alarm.alarmName = String(alarmName)
+                    alarm.alarmType = String(alarmType)
+                }
+                
+                alarm.initialize()
+                viewController.alarm = alarm
+            }
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
         
         return true
     }
@@ -96,14 +161,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return managedObjectContext
     }()
     
-    func setAlarm(alarm: Alarm!) {
+    func setAlarm(alarm: RealAlarm) {
         print("Setting an alarm")
-//        alarms.updateValue(alarm, forKey: alarm.region.identifier)
-//        locationManager.startMonitoringForRegion(alarm.region)
-//        
-//        
-//        masterViewController.objects.append(alarm)
-//        masterViewController.tableView.reloadData()
+        viewController.setViewAlarm(alarm)
     }
 
     // MARK: - Core Data Saving support

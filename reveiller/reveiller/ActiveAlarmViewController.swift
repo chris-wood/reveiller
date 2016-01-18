@@ -14,7 +14,7 @@ class ActiveAlarmViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
     
-    var alarm: Alarm?
+    var alarm: RealAlarm?
     var currentTime: ElasticDateTime?
     var backgroundColor: Bool = false
     
@@ -41,6 +41,7 @@ class ActiveAlarmViewController: UIViewController {
         } else {
             print("Done!")
             NSTimer.scheduledTimerWithTimeInterval(0.25, target: self, selector: "flashScreen", userInfo: nil, repeats: true)
+            alarm!.sound()
         }
     }
     
@@ -64,8 +65,8 @@ class ActiveAlarmViewController: UIViewController {
             }
         )
         
-        alarm!.setSnoozeTime(5)
-        alarm!.setSnoozeDecay(2) // half every time
+        alarm!.snoozeStart = 10
+        alarm!.snoozeDecay = 2 // half every time
         alarm!.activateAlarm(self, theSelector: Selector("timerExpired"));
     }
     

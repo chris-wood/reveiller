@@ -7,45 +7,59 @@
 //
 
 import Foundation
+import AVFoundation
+import CoreData
 
-public class Alarm {
-    var snoozeStart: Int = 0
-    var snoozeTime: Int = 0
-    var snoozeDecay: Int = 0
+@objc(RealAlarm)
+class RealAlarm : NSManagedObject {
     
     var callbackTarget: AnyObject?
     var callbackSelector: Selector?
-    var time: ElasticDateTime?
     
-    init() {
+    var time: ElasticDateTime? // this is the time the alarm fires
+    var audioPlayer: AVAudioPlayer = AVAudioPlayer()
+    
+    var _snoozeTime: Int = 0
+    var _snoozeDecay: Int = 0
+    var _snoozeStart: Int = 0
+    
+    func initialize() -> RealAlarm? {
+        _snoozeStart = Int(snoozeStart!)
+        _snoozeDecay = Int(snoozeDecay!)
+        _snoozeTime = _snoozeStart
+
+        // TODO: intiialzie this from the targetTime String
         time = ElasticDateTime(dateTime: NSDate())
+        
+        do {
+            let alarmSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(alarmName!, ofType: alarmType!)!)
+            audioPlayer = try AVAudioPlayer(contentsOfURL: alarmSound)
+            audioPlayer.prepareToPlay()
+        } catch {
+            // failed.
+            return nil
+        }
+        
+        return self
     }
     
-    public func setAlarmDate(alarmTime: NSDate) {
+    func setAlarmDate(alarmTime: NSDate) {
         time = ElasticDateTime(dateTime: alarmTime)
     }
     
-    public func setAlarmDateFromString(timeString: String) {
+    func setAlarmDateFromString(timeString: String) {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         let targetDateTime = dateFormatter.dateFromString(timeString)!
         time = ElasticDateTime(dateTime: targetDateTime)
     }
     
-    public func setSnoozeTime(time: Int) {
-        snoozeStart = time
-    }
-    
-    public func setSnoozeDecay(time: Int) {
-        snoozeDecay = time
-    }
-    
     func alarmExpired() -> Bool {
-        if (snoozeTime < 1) {
+        if (_snoozeTime < 1) {
             return false;
         } else {
-            time!.addSeconds(snoozeTime) // TODO: this should be minutes
-            snoozeTime /= snoozeDecay
+            time!.addSeconds(Int(_snoozeTime)) // TODO: this should be minutes
+            _snoozeTime /= _snoozeDecay
             activateAlarmTimer()
         }
         
@@ -58,12 +72,14 @@ public class Alarm {
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
     }
     
-    public func activateAlarm(theTarget: AnyObject, theSelector: Selector) {
+    func activateAlarm(theTarget: AnyObject, theSelector: Selector) {
         callbackTarget = theTarget
         callbackSelector = theSelector
-        snoozeTime = snoozeStart
+        _snoozeTime = _snoozeStart
         activateAlarmTimer()
     }
     
-    
+    func sound() {
+        audioPlayer.play()
+    }
 }

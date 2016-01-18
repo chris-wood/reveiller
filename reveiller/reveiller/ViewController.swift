@@ -17,12 +17,12 @@ class MainViewController: UIViewController {
     @IBOutlet weak var decayTimeLabel: UILabel!
     @IBOutlet weak var editButton: UIButton!
     
-    var alarm: Alarm = Alarm()
+    var alarm: RealAlarm?
     var time: ElasticDateTime?
     var targetDate: NSDate = NSDate();
     
     func timerExpired() {
-        if alarm.alarmExpired() {
+        if alarm!.alarmExpired() {
             print("Snooze!")
         } else {
             print("Done!")
@@ -30,41 +30,28 @@ class MainViewController: UIViewController {
         }
     }
     
-    func initUI() {
-        alarm = Alarm()
-        targetTimeLabel.text = alarm.time?.getTimeString()
+    func setCurrentTime() {
+        let timeString = time!.update().getTimeString()
+        print(timeString)
+        targetTimeLabel.text = timeString
     }
     
-    func snoozeTimeExpired() {
-        // TODO: check to see if the alarm should halt, decrease the snooze time, and reset the timer
+    func initUI() {
+        time = ElasticDateTime(dateTime: NSDate())
+        targetTimeLabel.text = alarm!.time?.getTimeString()
+    }
+    
+    func setViewAlarm(the_alarm: RealAlarm) {
+        self.alarm = the_alarm.initialize()
+        initUI()
     }
     
     @IBAction func onActivatePress(sender: UIButton) {
-//        let currentDate = NSDate()
-//        let calendar = NSCalendar.currentCalendar()
-//        let components = calendar.components([.Day , .Month , .Year, .Hour, .Minute, .Second], fromDate: currentDate)
-//
-//        var targetDateString = String(components.year) + "-";
-//        targetDateString = targetDateString + String(format: "%02d", components.month) + "-";
-//        targetDateString = targetDateString + String(format: "%02d", components.day) + " ";
-//        targetDateString = targetDateString + String(format: "%02d", components.hour) + ":";
-//        
-//        if (components.second + 3 > 60) {
-//            targetDateString = targetDateString + String(format: "%02d", components.minute + 1) + ":";
-//            targetDateString = targetDateString + String(format: "%02d", (components.second + 3) % 60);
-//        } else {
-//            targetDateString = targetDateString + String(format: "%02d", components.minute) + ":";
-//            targetDateString = targetDateString + String(format: "%02d", components.second + 3);
-//        }
-//        
-//        print(targetDateString)
+        alarm!.time?.update()
+        let alarmTime = alarm!.time!
         
-        alarm.time?.update()
-        let alarmTime = alarm.time!
         alarmTime.addSeconds(3)
-        alarm.setAlarmDate(alarmTime.getDateTime())
-        
-//        performSegueWithIdentifier("ShowActiveAlarm", sender: alarm)
+        alarm!.setAlarmDate(alarmTime.getDateTime())
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -78,6 +65,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
+        NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "setCurrentTime", userInfo: nil, repeats: true)
     }
     
     override func didReceiveMemoryWarning() {

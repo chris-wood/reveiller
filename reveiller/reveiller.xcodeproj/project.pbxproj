@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CF5E71491C44271500EDF98D /* ActiveAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E71481C44271500EDF98D /* ActiveAlarmViewController.swift */; };
+		CF951FC31C4B5A9400A3C842 /* metal.wav in Resources */ = {isa = PBXBuildFile; fileRef = CF951FC21C4B5A9400A3C842 /* metal.wav */; };
+		CF951FCC1C4C8EE700A3C842 /* Alarm+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF951FCB1C4C8EE700A3C842 /* Alarm+CoreDataProperties.swift */; };
 		CFAFB25C1C4190F400CF6BA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFB25B1C4190F400CF6BA3 /* AppDelegate.swift */; };
 		CFAFB25E1C4190F400CF6BA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFB25D1C4190F400CF6BA3 /* ViewController.swift */; };
 		CFAFB2641C4190F400CF6BA3 /* reveiller.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CFAFB2621C4190F400CF6BA3 /* reveiller.xcdatamodeld */; };
@@ -40,6 +42,9 @@
 
 /* Begin PBXFileReference section */
 		CF5E71481C44271500EDF98D /* ActiveAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveAlarmViewController.swift; sourceTree = "<group>"; };
+		CF951FC21C4B5A9400A3C842 /* metal.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metal.wav; sourceTree = "<group>"; };
+		CF951FC41C4C8EA600A3C842 /* reveiller-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "reveiller-Bridging-Header.h"; sourceTree = "<group>"; };
+		CF951FCB1C4C8EE700A3C842 /* Alarm+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alarm+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CFAFB2581C4190F400CF6BA3 /* reveiller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reveiller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFAFB25B1C4190F400CF6BA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFAFB25D1C4190F400CF6BA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,12 +117,15 @@
 				CFCFE4CF1C41C4E700572F55 /* EditAlarmViewController.swift */,
 				CF5E71481C44271500EDF98D /* ActiveAlarmViewController.swift */,
 				CFAFB28C1C41914100CF6BA3 /* Alarm.swift */,
+				CF951FCB1C4C8EE700A3C842 /* Alarm+CoreDataProperties.swift */,
 				CFAFB28D1C41914100CF6BA3 /* ElasticDateTime.swift */,
 				CFAFB2651C4190F400CF6BA3 /* Assets.xcassets */,
+				CF951FC21C4B5A9400A3C842 /* metal.wav */,
 				CFAFB2671C4190F400CF6BA3 /* LaunchScreen.storyboard */,
 				CFAFB2941C41929800CF6BA3 /* Main.storyboard */,
 				CFAFB26A1C4190F500CF6BA3 /* Info.plist */,
 				CFAFB2621C4190F400CF6BA3 /* reveiller.xcdatamodeld */,
+				CF951FC41C4C8EA600A3C842 /* reveiller-Bridging-Header.h */,
 			);
 			path = reveiller;
 			sourceTree = "<group>";
@@ -244,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF951FC31C4B5A9400A3C842 /* metal.wav in Resources */,
 				CFAFB2961C41929800CF6BA3 /* Main.storyboard in Resources */,
 				CFAFB2691C4190F400CF6BA3 /* LaunchScreen.storyboard in Resources */,
 				CFAFB2661C4190F400CF6BA3 /* Assets.xcassets in Resources */,
@@ -272,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFAFB25E1C4190F400CF6BA3 /* ViewController.swift in Sources */,
+				CF951FCC1C4C8EE700A3C842 /* Alarm+CoreDataProperties.swift in Sources */,
 				CF5E71491C44271500EDF98D /* ActiveAlarmViewController.swift in Sources */,
 				CFAFB2901C41914100CF6BA3 /* ElasticDateTime.swift in Sources */,
 				CFAFB25C1C4190F400CF6BA3 /* AppDelegate.swift in Sources */,
@@ -419,10 +429,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = reveiller/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = caw.reveiller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "reveiller/reveiller-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -430,10 +443,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = reveiller/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = caw.reveiller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "reveiller/reveiller-Bridging-Header.h";
 			};
 			name = Release;
 		};
