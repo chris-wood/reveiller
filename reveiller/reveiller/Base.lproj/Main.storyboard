@@ -112,8 +112,9 @@
                     <connections>
                         <outlet property="activateButton" destination="Kod-sX-To4" id="8lg-sg-4bL"/>
                         <outlet property="backgroundView" destination="tsR-hK-woN" id="RTx-op-Dnm"/>
-                        <outlet property="decayTimeLabel" destination="b4r-Bh-659" id="S7O-aZ-fE1"/>
+                        <outlet property="decayLabel" destination="rON-0n-NQM" id="je6-wF-rf7"/>
                         <outlet property="editButton" destination="Fra-OR-Qi9" id="71N-we-XpT"/>
+                        <outlet property="startLabel" destination="b4r-Bh-659" id="Cen-4D-0QD"/>
                         <outlet property="targetTimeLabel" destination="Ypb-Im-UAh" id="P9V-mi-CRc"/>
                     </connections>
                 </viewController>
@@ -153,6 +154,9 @@
                                                 <state key="normal" title="Save">
                                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onSaveButton:" destination="UP4-WX-fjs" eventType="touchUpInside" id="9Wa-fy-ytC"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

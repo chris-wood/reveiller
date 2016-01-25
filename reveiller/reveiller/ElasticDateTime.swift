@@ -46,7 +46,7 @@ public class ElasticDateTime {
     }
     
     public func getTimeString() -> String {
-        let currentDate = NSDate()
+        let currentDate = time
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components([.Hour, .Minute, .Second], fromDate: currentDate)
         

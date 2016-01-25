@@ -10,6 +10,9 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var decayLabel: UILabel!
+    @IBOutlet weak var startLabel: UILabel!
+    
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var activateButton: UIButton!
     
@@ -18,7 +21,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var editButton: UIButton!
     
     var alarm: RealAlarm?
-    var time: ElasticDateTime?
     var targetDate: NSDate = NSDate();
     
     func timerExpired() {
@@ -30,27 +32,30 @@ class MainViewController: UIViewController {
         }
     }
     
-    func setCurrentTime() {
-        let timeString = time!.update().getTimeString()
-        print(timeString)
-        targetTimeLabel.text = timeString
-    }
-    
     func initUI() {
-        time = ElasticDateTime(dateTime: NSDate())
-        targetTimeLabel.text = alarm!.time?.getTimeString()
+        let targetDate = alarm!.time!.getDateTime()
+        let targetTime = alarm!.time!.getTimeString()
+        print("Target alarm time: ", targetDate, targetTime)
+        targetTimeLabel.text = targetTime
+        
+        let decay = String(alarm!.snoozeStart!);
+        decayLabel.text = decay
+        
+        let start = String(alarm!.snoozeDecay!)
+        startLabel.text = start
     }
     
     func setViewAlarm(the_alarm: RealAlarm) {
-        self.alarm = the_alarm.initialize()
+        self.alarm = the_alarm
         initUI()
     }
     
     @IBAction func onActivatePress(sender: UIButton) {
-        alarm!.time?.update()
         let alarmTime = alarm!.time!
+    
+        alarmTime.addSeconds(10)
         
-        alarmTime.addSeconds(3)
+        print("Setting the alarm at", alarm!.time?.getTimeString())
         alarm!.setAlarmDate(alarmTime.getDateTime())
     }
     
@@ -65,7 +70,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
-        NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "setCurrentTime", userInfo: nil, repeats: true)
     }
     
     override func didReceiveMemoryWarning() {

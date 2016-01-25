@@ -41,9 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         do {
             let result = try self.managedObjectContext.executeFetchRequest(fetchRequest)
-            print(result)
+//            print(result)
             
-            if result.count == 0 {
+            if result.count == 0 { // if there was no previously saved alarm...
                 let entity =  NSEntityDescription.entityForName("Alarm",
                     inManagedObjectContext: managedObjectContext)!
                 
@@ -53,7 +53,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 thealarm.setValue("metal", forKey: "alarmName")
                 thealarm.setValue("wav", forKey: "alarmType")
                 
-                print(thealarm)
+                let dateFormatter = NSDateFormatter()
+                let theDateFormat = NSDateFormatterStyle.ShortStyle
+                let theTimeFormat = NSDateFormatterStyle.ShortStyle
+                dateFormatter.dateStyle = theDateFormat
+                dateFormatter.timeStyle = theTimeFormat
+                
+                let dateString = dateFormatter.stringFromDate(NSDate())
+                
+                thealarm.setValue(dateString, forKey: "targetTime")
+                
+//                print(thealarm)
 //                print(NSStringFromClass(thealarm.dynamicType).componentsSeparatedByString(".").last!)
 //                print(NSStringFromClass(thealarm))
 
@@ -62,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 do {
                     try thealarm.managedObjectContext?.save()
-                    print("OK, it worked.")
+//                    print("OK, it worked.")
                 } catch {
                     print("WTF!")
                 }
@@ -162,7 +172,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
     
     func setAlarm(alarm: RealAlarm) {
-        print("Setting an alarm")
         viewController.setViewAlarm(alarm)
     }
 

@@ -28,8 +28,13 @@ class RealAlarm : NSManagedObject {
         _snoozeDecay = Int(snoozeDecay!)
         _snoozeTime = _snoozeStart
 
-        // TODO: intiialzie this from the targetTime String
-        time = ElasticDateTime(dateTime: NSDate())
+        let dateFormatter = NSDateFormatter()
+        let theDateFormat = NSDateFormatterStyle.ShortStyle
+        let theTimeFormat = NSDateFormatterStyle.ShortStyle
+        dateFormatter.dateStyle = theDateFormat
+        dateFormatter.timeStyle = theTimeFormat
+        
+        time = ElasticDateTime(dateTime: dateFormatter.dateFromString(targetTime!)!)
         
         do {
             let alarmSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(alarmName!, ofType: alarmType!)!)
