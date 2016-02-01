@@ -63,12 +63,15 @@ class RealAlarm : NSManagedObject {
         if (_snoozeTime < 1) {
             return false;
         } else {
-            time!.addSeconds(Int(_snoozeTime)) // TODO: this should be minutes
-            _snoozeTime /= _snoozeDecay
-            activateAlarmTimer()
+            time!.addSeconds(Int(_snoozeTime * 60))
+            _snoozeTime /= _snoozeDecay // TODO: this function should be configured in the EDIT alarm screen
         }
         
         return true;
+    }
+    
+    func getTargetDateTime() -> ElasticDateTime {
+        return time!
     }
     
     func activateAlarmTimer() {
@@ -77,11 +80,27 @@ class RealAlarm : NSManagedObject {
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
     }
     
-    func activateAlarm(theTarget: AnyObject, theSelector: Selector) {
-        callbackTarget = theTarget
-        callbackSelector = theSelector
+    func getAlarmRange() -> [(ElasticDateTime, Double)] {
+        let changingTime = ElasticDateTime(dateTime: time!.getDateTime())
+        var timeRange: [(ElasticDateTime, Double)] = []
+        
+        var delta = _snoozeStart as Int
+        while (delta >= 1) {
+            timeRange += [(ElasticDateTime(dateTime: changingTime.getDateTime()), 1.0)]
+            
+            let newdelta = delta / (snoozeDecay as! Int)
+            while delta > newdelta {
+                changingTime.addMinutes(1)
+                timeRange += [(ElasticDateTime(dateTime: changingTime.getDateTime()), 0.0)]
+                delta--
+            }
+        }
+        
+        return timeRange
+    }
+    
+    func activateAlarm() {
         _snoozeTime = _snoozeStart
-        activateAlarmTimer()
     }
     
     func sound() {

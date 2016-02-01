@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0FE18574CE1A34BE06F0B6 /* Pods_reveiller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01DC4265DC4AF5CB56E62CDB /* Pods_reveiller.framework */; };
 		CF5E71491C44271500EDF98D /* ActiveAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E71481C44271500EDF98D /* ActiveAlarmViewController.swift */; };
 		CF951FC31C4B5A9400A3C842 /* metal.wav in Resources */ = {isa = PBXBuildFile; fileRef = CF951FC21C4B5A9400A3C842 /* metal.wav */; };
 		CF951FCC1C4C8EE700A3C842 /* Alarm+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF951FCB1C4C8EE700A3C842 /* Alarm+CoreDataProperties.swift */; };
@@ -40,7 +41,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CF79424A1C5AF23000C04C4C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		01DC4265DC4AF5CB56E62CDB /* Pods_reveiller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_reveiller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1766A1600F36DD9087C94723 /* Pods-reveiller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reveiller.release.xcconfig"; path = "Pods/Target Support Files/Pods-reveiller/Pods-reveiller.release.xcconfig"; sourceTree = "<group>"; };
+		20E18C0C6E320F39269D2064 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5E71481C44271500EDF98D /* ActiveAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveAlarmViewController.swift; sourceTree = "<group>"; };
 		CF951FC21C4B5A9400A3C842 /* metal.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metal.wav; sourceTree = "<group>"; };
 		CF951FC41C4C8EA600A3C842 /* reveiller-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "reveiller-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -62,6 +79,7 @@
 		CFAFB28D1C41914100CF6BA3 /* ElasticDateTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticDateTime.swift; sourceTree = "<group>"; };
 		CFAFB2951C41929800CF6BA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CFCFE4CF1C41C4E700572F55 /* EditAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAlarmViewController.swift; sourceTree = "<group>"; };
+		D2EB1463025AED1A381D60A9 /* Pods-reveiller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reveiller.debug.xcconfig"; path = "Pods/Target Support Files/Pods-reveiller/Pods-reveiller.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF0FE18574CE1A34BE06F0B6 /* Pods_reveiller.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +108,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DB597C899B11D14B71F4682 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20E18C0C6E320F39269D2064 /* Pods.framework */,
+				01DC4265DC4AF5CB56E62CDB /* Pods_reveiller.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		82704965E84A5FF4E18BEFA2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2EB1463025AED1A381D60A9 /* Pods-reveiller.debug.xcconfig */,
+				1766A1600F36DD9087C94723 /* Pods-reveiller.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CFAFB24F1C4190F400CF6BA3 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +133,8 @@
 				CFAFB2721C4190F500CF6BA3 /* reveillerTests */,
 				CFAFB27D1C4190F500CF6BA3 /* reveillerUITests */,
 				CFAFB2591C4190F400CF6BA3 /* Products */,
+				82704965E84A5FF4E18BEFA2 /* Pods */,
+				5DB597C899B11D14B71F4682 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,9 +194,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFAFB2831C4190F500CF6BA3 /* Build configuration list for PBXNativeTarget "reveiller" */;
 			buildPhases = (
+				A08452EF4557CE838EC21617 /* Check Pods Manifest.lock */,
 				CFAFB2541C4190F400CF6BA3 /* Sources */,
 				CFAFB2551C4190F400CF6BA3 /* Frameworks */,
 				CFAFB2561C4190F400CF6BA3 /* Resources */,
+				CF79424A1C5AF23000C04C4C /* Embed Frameworks */,
+				60FD3C90DC41B751D26E4FC5 /* Embed Pods Frameworks */,
+				4D61580D6CDC1F88FADE241D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,6 +259,7 @@
 				TargetAttributes = {
 					CFAFB2571C4190F400CF6BA3 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 8B47X7Q3DF;
 					};
 					CFAFB26E1C4190F500CF6BA3 = {
 						CreatedOnToolsVersion = 7.2;
@@ -274,6 +318,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4D61580D6CDC1F88FADE241D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-reveiller/Pods-reveiller-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60FD3C90DC41B751D26E4FC5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-reveiller/Pods-reveiller-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A08452EF4557CE838EC21617 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CFAFB2541C4190F400CF6BA3 /* Sources */ = {
@@ -427,13 +519,18 @@
 		};
 		CFAFB2841C4190F500CF6BA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2EB1463025AED1A381D60A9 /* Pods-reveiller.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = reveiller/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = caw.reveiller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "reveiller/reveiller-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -441,13 +538,18 @@
 		};
 		CFAFB2851C4190F500CF6BA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1766A1600F36DD9087C94723 /* Pods-reveiller.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = reveiller/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = caw.reveiller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "reveiller/reveiller-Bridging-Header.h";
 			};
 			name = Release;

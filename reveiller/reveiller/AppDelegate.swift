@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Charts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -41,7 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         do {
             let result = try self.managedObjectContext.executeFetchRequest(fetchRequest)
-//            print(result)
             
             if result.count == 0 { // if there was no previously saved alarm...
                 let entity =  NSEntityDescription.entityForName("Alarm",
@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 let thealarm = RealAlarm(entity: entity, insertIntoManagedObjectContext: managedObjectContext)
                 thealarm.setValue(10, forKey: "snoozeStart")
-                thealarm.setValue(10, forKey: "snoozeDecay")
+                thealarm.setValue(2, forKey: "snoozeDecay")
                 thealarm.setValue("metal", forKey: "alarmName")
                 thealarm.setValue("wav", forKey: "alarmType")
                 
