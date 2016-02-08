@@ -40,13 +40,16 @@ class MainViewController: UIViewController {
         graphView.noDataText = "You need to provide data for the chart."
         var dataEntries: [BarChartDataEntry] = []
         
+        var colors: [UIColor] = []
         for i in 0..<dataPoints.count {
             let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
             dataEntries.append(dataEntry)
+            colors += [UIColor.blackColor()]
         }
         
         let chartDataSet = BarChartDataSet(yVals: dataEntries)
-        chartDataSet.colors = ChartColorTemplates.colorful()
+        chartDataSet.colors = colors
+        chartDataSet.drawValuesEnabled = false
         let chartData = BarChartData(xVals: dataPoints, dataSet: chartDataSet)
         
         graphView.data = chartData
@@ -62,21 +65,24 @@ class MainViewController: UIViewController {
             // 1 - creating an array of data entries
             var yVals1 : [ChartDataEntry] = [ChartDataEntry]()
             for var i = 0; i < months.count; i++ {
-                yVals1.append(ChartDataEntry(value: values[i], xIndex: i))
+                let entry = ChartDataEntry(value: values[i], xIndex: i)
+                yVals1.append(entry)
             }
             
             // 2 - create a data set with our array
-            let set1: LineChartDataSet = LineChartDataSet(yVals: yVals1, label: "First Set")
-            set1.axisDependency = .Left // Line will correlate with left axis values
+            let set1: LineChartDataSet = LineChartDataSet(yVals: yVals1)
+//            set1.axisDependency = .Left // Line will correlate with left axis values
             set1.setColor(UIColor.redColor().colorWithAlphaComponent(0.5)) // our line's opacity is 50%
             set1.setCircleColor(UIColor.redColor()) // our circle will be dark red
-            set1.lineWidth = 2.0
+//            set1.lineWidth = 2.0
             set1.circleRadius = 6.0 // the radius of the node circle
             set1.fillAlpha = 65 / 255.0
             set1.fillColor = UIColor.redColor()
             set1.highlightColor = UIColor.whiteColor()
-            set1.drawCircleHoleEnabled = true
-            
+            set1.drawCircleHoleEnabled = false
+            set1.drawValuesEnabled = false
+            set1.drawVerticalHighlightIndicatorEnabled = false
+        
             //3 - create an array to store our LineChartDataSets
             var dataSets : [LineChartDataSet] = [LineChartDataSet]()
             dataSets.append(set1)
@@ -84,10 +90,17 @@ class MainViewController: UIViewController {
             //4 - pass our months in for our x-axis label value along with our dataSets
             let data: LineChartData = LineChartData(xVals: months, dataSets: dataSets)
             data.setValueTextColor(UIColor.whiteColor())
+        
+            historyGraph.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
             
             //5 - finally set our data
             historyGraph.data = data
+            historyGraph.rightAxis.enabled = false
+            historyGraph.leftAxis.enabled = false
+            historyGraph.descriptionText = ""
     }
+    
+    let dayMap = [1 : "Sun", 2: "Mon", 3: "Tue", 4:"Wed", 5: "Thu", 6: "Fri", 7: "Sat"]
     
     func addAlarmGraph() {
         graphView.noDataText = "DUUUUUDE"
@@ -97,13 +110,21 @@ class MainViewController: UIViewController {
         var values: [Double] = []
         for (t, i) in timeRange {
             times += [t.getTimeString()]
+            print(t.getTimeString())
             values += [i]
         }
         setDecayChart(times, values: values)
         
-        let months1 = ["Jan" , "Feb", "Mar", "Apr", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"]
-        let dollars1 = [1453.0,2352,5431,1442,5451,6486,1173,5678,9234,1345,9411,2212]
-        setHistoryChart(months1, values: dollars1)
+        var days: [String] = []
+        var historyValues: [Double] = []
+        let currentDay = alarm!.time?.getDayOfWeek()
+        for i in 0...6 {
+            let day = ((currentDay! + i) % 7) + 1
+            days += [dayMap[day]!]
+            historyValues += [0.0]
+        }
+        
+        setHistoryChart(days, values: historyValues)
     }
     
     func initUI() {

@@ -88,10 +88,14 @@ class RealAlarm : NSManagedObject {
         while (delta >= 1) {
             timeRange += [(ElasticDateTime(dateTime: changingTime.getDateTime()), 1.0)]
             
+            print(changingTime.getTimeString())
+            
             let newdelta = delta / (snoozeDecay as! Int)
             while delta > newdelta {
                 changingTime.addMinutes(1)
                 timeRange += [(ElasticDateTime(dateTime: changingTime.getDateTime()), 0.0)]
+                
+                print(changingTime.getTimeString())
                 delta--
             }
         }

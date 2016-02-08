@@ -18,23 +18,37 @@ public class ElasticDateTime {
     public func addMinutes(n: Int) {
         let startTime = time.timeIntervalSinceNow
         let timeIntervalIncrease = NSTimeInterval(n * 60)
-        let targetTime = startTime + timeIntervalIncrease
-        time = NSDate(timeInterval: targetTime, sinceDate: time)
+//        let targetTime = startTime + timeIntervalIncrease
+        time = NSDate(timeInterval: timeIntervalIncrease, sinceDate: time)
     }
     
     public func addSeconds(n: Int) {
         let startTime = time.timeIntervalSinceNow
         let timeIntervalIncrease = NSTimeInterval(n)
-        let targetTime = startTime + timeIntervalIncrease
-        time = NSDate(timeInterval: targetTime, sinceDate: time)
+//        let targetTime = startTime + timeIntervalIncrease
+        time = NSDate(timeInterval: timeIntervalIncrease, sinceDate: time)
     }
     
     public func addHours(n: Int) {
         let startTime = time.timeIntervalSinceNow
         let timeIntervalIncrease = NSTimeInterval(n * 3600)
-        let targetTime = startTime + timeIntervalIncrease
-        time = NSDate(timeInterval: targetTime, sinceDate: time)
+//        let targetTime = startTime + timeIntervalIncrease
+        time = NSDate(timeInterval: timeIntervalIncrease, sinceDate: time)
     }
+    
+    public func getDayOfWeek() -> Int {
+        
+        let formatter  = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        print(self.getDateString())
+        let todayDate = formatter.dateFromString(self.getDateString())!
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let myComponents = myCalendar.components(.Weekday, fromDate: todayDate)
+        let weekDay = (myComponents.weekday % 7) + 1
+        
+        return weekDay
+    }
+
     
     public func getDateTime() -> NSDate {
         return time
@@ -44,6 +58,19 @@ public class ElasticDateTime {
         time = NSDate()
         return self
     }
+    
+    public func getDateString() -> String {
+        let currentDate = time
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Year, .Month, .Day], fromDate: currentDate)
+        
+        var targetDateString = String(format: "%04d", components.year) + "-";
+        targetDateString = targetDateString + String(format: "%02d", components.month) + "-";
+        targetDateString = targetDateString + String(format: "%02d", components.day);
+        
+        return targetDateString
+    }
+
     
     public func getTimeString() -> String {
         let currentDate = time
