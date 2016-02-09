@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AF0FE18574CE1A34BE06F0B6 /* Pods_reveiller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01DC4265DC4AF5CB56E62CDB /* Pods_reveiller.framework */; };
 		CF5E71491C44271500EDF98D /* ActiveAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E71481C44271500EDF98D /* ActiveAlarmViewController.swift */; };
+		CF7204C41C69423E008D91DB /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = CF7204C31C69423E008D91DB /* sun.png */; };
 		CF951FC31C4B5A9400A3C842 /* metal.wav in Resources */ = {isa = PBXBuildFile; fileRef = CF951FC21C4B5A9400A3C842 /* metal.wav */; };
 		CF951FCC1C4C8EE700A3C842 /* Alarm+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF951FCB1C4C8EE700A3C842 /* Alarm+CoreDataProperties.swift */; };
 		CFAFB25C1C4190F400CF6BA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFB25B1C4190F400CF6BA3 /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 		1766A1600F36DD9087C94723 /* Pods-reveiller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reveiller.release.xcconfig"; path = "Pods/Target Support Files/Pods-reveiller/Pods-reveiller.release.xcconfig"; sourceTree = "<group>"; };
 		20E18C0C6E320F39269D2064 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5E71481C44271500EDF98D /* ActiveAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveAlarmViewController.swift; sourceTree = "<group>"; };
+		CF7204C31C69423E008D91DB /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
 		CF951FC21C4B5A9400A3C842 /* metal.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metal.wav; sourceTree = "<group>"; };
 		CF951FC41C4C8EA600A3C842 /* reveiller-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "reveiller-Bridging-Header.h"; sourceTree = "<group>"; };
 		CF951FCB1C4C8EE700A3C842 /* Alarm+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alarm+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				CF951FCB1C4C8EE700A3C842 /* Alarm+CoreDataProperties.swift */,
 				CFAFB28D1C41914100CF6BA3 /* ElasticDateTime.swift */,
 				CFAFB2651C4190F400CF6BA3 /* Assets.xcassets */,
+				CF7204C31C69423E008D91DB /* sun.png */,
 				CF951FC21C4B5A9400A3C842 /* metal.wav */,
 				CFAFB2671C4190F400CF6BA3 /* LaunchScreen.storyboard */,
 				CFAFB2941C41929800CF6BA3 /* Main.storyboard */,
@@ -298,6 +301,7 @@
 			files = (
 				CF951FC31C4B5A9400A3C842 /* metal.wav in Resources */,
 				CFAFB2961C41929800CF6BA3 /* Main.storyboard in Resources */,
+				CF7204C41C69423E008D91DB /* sun.png in Resources */,
 				CFAFB2691C4190F400CF6BA3 /* LaunchScreen.storyboard in Resources */,
 				CFAFB2661C4190F400CF6BA3 /* Assets.xcassets in Resources */,
 			);

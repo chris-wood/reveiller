@@ -118,11 +118,15 @@ class MainViewController: UIViewController {
         var days: [String] = []
         var historyValues: [Double] = []
         let currentDay = alarm!.time?.getDayOfWeek()
+//        print(currentDay!)
         for i in 0...6 {
-            let day = ((currentDay! + i) % 7) + 1
+            let day = ((currentDay! + i - 1) % 7) + 1
             days += [dayMap[day]!]
             historyValues += [0.0]
         }
+        
+        days = days.reverse()
+        historyValues = historyValues.reverse()
         
         setHistoryChart(days, values: historyValues)
     }
@@ -133,13 +137,25 @@ class MainViewController: UIViewController {
         print("Target alarm time: ", targetDate, targetTime)
         targetTimeLabel.text = targetTime
         
-        let decay = String(alarm!.snoozeStart!);
-        decayLabel.text = decay
-        
-        let start = String(alarm!.snoozeDecay!)
-        startLabel.text = start
+//        let decay = String(alarm!.snoozeStart!);
+//        decayLabel.text = decay
+//        
+//        let start = String(alarm!.snoozeDecay!)
+//        startLabel.text = start
         
         addAlarmGraph()
+        
+        let width = targetTimeLabel.bounds.size.width
+        let height = targetTimeLabel.bounds.size.height
+        
+        let imageViewBackground = UIImageView(frame: CGRectMake(0, 0, width, height))
+        imageViewBackground.image = UIImage(named: "sun.png")
+        
+        targetTimeLabel.addSubview(imageViewBackground)
+        targetTimeLabel.sendSubviewToBack(imageViewBackground)
+        
+//        targetTimeLabel.contentMode = UIViewContentMode.ScaleAspectFill
+//        targetTimeLabel.backgroundColor = UIColor(patternImage: imageViewBackground)
     }
     
     func setViewAlarm(the_alarm: RealAlarm) {
