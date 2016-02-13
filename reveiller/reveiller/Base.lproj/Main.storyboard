@@ -130,146 +130,172 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="KjU-Ju-i22">
-                                <rect key="frame" x="30" y="30" width="540" height="370"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YI9-jk-hqg">
+                                <rect key="frame" x="30" y="10" width="540" height="580"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="v5L-sA-9nn">
-                                        <rect key="frame" x="0.0" y="0.0" width="540" height="27"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="KjU-Ju-i22">
+                                        <rect key="frame" x="110" y="0.0" width="320" height="580"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDp-YY-tgn">
-                                                <rect key="frame" x="0.0" y="0.0" width="265" height="27"/>
-                                                <state key="normal" title="Cancel">
-                                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="onCancelButton:" destination="UP4-WX-fjs" eventType="touchUpInside" id="Sdx-RJ-YFc"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdX-es-4fI">
-                                                <rect key="frame" x="275" y="0.0" width="265" height="27"/>
-                                                <state key="normal" title="Save">
-                                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="onSaveButton:" destination="UP4-WX-fjs" eventType="touchUpInside" id="9Wa-fy-ytC"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="le temps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TL-E6-ZO4">
-                                        <rect key="frame" x="0.0" y="27" width="540" height="19"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="LQq-Ym-Axj">
-                                        <rect key="frame" x="0.0" y="45" width="540" height="16"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="16" id="yTE-WG-P4V"/>
-                                        </constraints>
-                                        <date key="date" timeIntervalSinceReferenceDate="474071698.78246498">
-                                            <!--2016-01-09 22:34:58 +0000-->
-                                        </date>
-                                    </datePicker>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="er7-z7-DIh">
-                                        <rect key="frame" x="0.0" y="61" width="540" height="309"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WGk-Mo-boO">
-                                                <rect key="frame" x="0.0" y="0.0" width="540" height="70"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="v5L-sA-9nn">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snooze Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAZ-ke-n7E">
-                                                        <rect key="frame" x="0.0" y="0.0" width="99" height="70"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bma-xb-0no">
-                                                        <rect key="frame" x="99" y="0.0" width="347" height="70"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="gFJ-0C-oEv">
-                                                        <rect key="frame" x="446" y="0.0" width="94" height="29"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDp-YY-tgn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="155" height="30"/>
+                                                        <state key="normal" title="Cancel">
+                                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
                                                         <connections>
-                                                            <action selector="onSnoozeStartPress:" destination="UP4-WX-fjs" eventType="valueChanged" id="12e-3X-RWw"/>
+                                                            <action selector="onCancelButton:" destination="UP4-WX-fjs" eventType="touchUpInside" id="Sdx-RJ-YFc"/>
                                                         </connections>
-                                                    </stepper>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdX-es-4fI">
+                                                        <rect key="frame" x="165" y="0.0" width="155" height="30"/>
+                                                        <state key="normal" title="Save">
+                                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onSaveButton:" destination="UP4-WX-fjs" eventType="touchUpInside" id="9Wa-fy-ytC"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Nm-Vw-ZW1">
-                                                <rect key="frame" x="0.0" y="80" width="540" height="70"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snooze Decay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8a-d8-t3B">
-                                                        <rect key="frame" x="0.0" y="0.0" width="110" height="70"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="110" id="09O-ax-UNm"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PE2-BY-7NW">
-                                                        <rect key="frame" x="110" y="0.0" width="337" height="70"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="337-6q-yHP">
-                                                        <rect key="frame" x="447" y="0.0" width="94" height="29"/>
-                                                        <connections>
-                                                            <action selector="onSnoozeDecayPress:" destination="UP4-WX-fjs" eventType="valueChanged" id="QOS-Fu-kFV"/>
-                                                        </connections>
-                                                    </stepper>
-                                                </subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="le temps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TL-E6-ZO4">
+                                                <rect key="frame" x="0.0" y="90" width="320" height="20"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="PE2-BY-7NW" secondAttribute="trailing" constant="93" id="2jV-1N-KdS"/>
-                                                </constraints>
-                                            </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gb7-gG-nUa">
-                                                <rect key="frame" x="0.0" y="160" width="540" height="70"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="QK0-2a-Mws"/>
+                                                    <constraint firstAttribute="height" constant="20" id="uXZ-5j-6hZ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="LQq-Ym-Axj">
+                                                <rect key="frame" x="0.0" y="170" width="320" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="yNB-iT-pWI"/>
+                                                    <constraint firstAttribute="height" constant="16" id="yTE-WG-P4V"/>
+                                                </constraints>
+                                                <date key="date" timeIntervalSinceReferenceDate="474071698.78246498">
+                                                    <!--2016-01-09 22:34:58 +0000-->
+                                                </date>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="QK0-2a-Mws"/>
+                                                        <exclude reference="yTE-WG-P4V"/>
                                                     </mask>
                                                 </variation>
-                                            </label>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMR-ak-FDm">
-                                                <rect key="frame" x="0.0" y="239" width="540" height="70"/>
+                                            </datePicker>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="er7-z7-DIh">
+                                                <rect key="frame" x="0.0" y="430" width="320" height="150"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WGk-Mo-boO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snooze Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAZ-ke-n7E">
+                                                                <rect key="frame" x="0.0" y="0.0" width="99" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bma-xb-0no">
+                                                                <rect key="frame" x="99" y="0.0" width="127" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="gFJ-0C-oEv">
+                                                                <rect key="frame" x="226" y="0.0" width="94" height="29"/>
+                                                                <connections>
+                                                                    <action selector="onSnoozeStartPress:" destination="UP4-WX-fjs" eventType="valueChanged" id="12e-3X-RWw"/>
+                                                                </connections>
+                                                            </stepper>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Nm-Vw-ZW1">
+                                                        <rect key="frame" x="0.0" y="40" width="320" height="30"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snooze Decay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8a-d8-t3B">
+                                                                <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="110" id="09O-ax-UNm"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PE2-BY-7NW">
+                                                                <rect key="frame" x="110" y="0.0" width="117" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="337-6q-yHP">
+                                                                <rect key="frame" x="227" y="0.0" width="94" height="29"/>
+                                                                <connections>
+                                                                    <action selector="onSnoozeDecayPress:" destination="UP4-WX-fjs" eventType="valueChanged" id="QOS-Fu-kFV"/>
+                                                                </connections>
+                                                            </stepper>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="PE2-BY-7NW" secondAttribute="trailing" constant="93" id="2jV-1N-KdS"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gb7-gG-nUa">
+                                                        <rect key="frame" x="0.0" y="80" width="320" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="QK0-2a-Mws"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="QK0-2a-Mws"/>
+                                                            </mask>
+                                                        </variation>
+                                                    </label>
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMR-ak-FDm">
+                                                        <rect key="frame" x="0.0" y="120" width="320" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="APV-ez-Tex"/>
+                                                            <constraint firstAttribute="height" constant="216" id="N4a-FT-uov"/>
+                                                        </constraints>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="N4a-FT-uov"/>
+                                                            </mask>
+                                                        </variation>
+                                                    </pickerView>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="216" id="N4a-FT-uov"/>
+                                                    <constraint firstItem="7Nm-Vw-ZW1" firstAttribute="top" secondItem="er7-z7-DIh" secondAttribute="top" constant="39" id="1cU-bk-n6r"/>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="N4a-FT-uov"/>
+                                                        <exclude reference="1cU-bk-n6r"/>
                                                     </mask>
                                                 </variation>
-                                            </pickerView>
+                                            </stackView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="7Nm-Vw-ZW1" firstAttribute="top" secondItem="er7-z7-DIh" secondAttribute="top" constant="39" id="1cU-bk-n6r"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="1cU-bk-n6r"/>
-                                            </mask>
-                                        </variation>
                                     </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="S2V-fg-cKe" firstAttribute="top" secondItem="KjU-Ju-i22" secondAttribute="bottom" constant="200" id="0O7-3N-eaK"/>
-                            <constraint firstItem="KjU-Ju-i22" firstAttribute="leading" secondItem="9O9-0a-KDf" secondAttribute="leadingMargin" constant="10" id="14Y-mJ-Uo7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KjU-Ju-i22" secondAttribute="trailing" constant="10" id="22Q-Yk-nOx"/>
-                            <constraint firstItem="v5L-sA-9nn" firstAttribute="top" secondItem="4OJ-9L-31i" secondAttribute="bottom" constant="10" id="XM8-eo-ZQy"/>
-                            <constraint firstItem="KjU-Ju-i22" firstAttribute="top" secondItem="4OJ-9L-31i" secondAttribute="bottom" constant="10" id="cVM-gf-SdP"/>
+                            <constraint firstItem="YI9-jk-hqg" firstAttribute="leading" secondItem="9O9-0a-KDf" secondAttribute="leadingMargin" id="0Fj-wl-ic4"/>
+                            <constraint firstItem="YI9-jk-hqg" firstAttribute="top" secondItem="9O9-0a-KDf" secondAttribute="topMargin" id="8z1-lP-dDo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YI9-jk-hqg" secondAttribute="trailing" id="AV4-ua-Iow"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YI9-jk-hqg" secondAttribute="trailing" constant="10" id="MmJ-yl-s9G"/>
+                            <constraint firstItem="S2V-fg-cKe" firstAttribute="top" secondItem="YI9-jk-hqg" secondAttribute="bottom" constant="10" id="Qqg-3a-kQL"/>
+                            <constraint firstItem="YI9-jk-hqg" firstAttribute="top" secondItem="9O9-0a-KDf" secondAttribute="topMargin" constant="10" id="gZA-wG-Qhv"/>
+                            <constraint firstItem="YI9-jk-hqg" firstAttribute="leading" secondItem="9O9-0a-KDf" secondAttribute="leadingMargin" constant="10" id="h28-hH-g4W"/>
+                            <constraint firstItem="S2V-fg-cKe" firstAttribute="top" secondItem="YI9-jk-hqg" secondAttribute="bottom" id="o2D-FR-SMM"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0Fj-wl-ic4"/>
+                                <exclude reference="8z1-lP-dDo"/>
+                                <exclude reference="AV4-ua-Iow"/>
+                                <exclude reference="o2D-FR-SMM"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="alarmPicker" destination="cMR-ak-FDm" id="FKK-XE-b0z"/>
